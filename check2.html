@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CBT Web App</title>
+</head>
+<body>
+    <h1>Computer-Based Test</h1>
+    <div id="exam-container">
+        <!-- Questions and answer choices go here -->
+        <p>Question 1: What is 2 + 2?</p>
+        <label><input type="radio" name="q1" value="A"> A) 4</label>
+        <label><input type="radio" name="q1" value="B"> B) 5</label>
+        <label><input type="radio" name="q1" value="C"> C) 6</label>
+
+        <p>Question 2: What is 3 x 3?</p>
+        <label><input type="radio" name="q2" value="A"> A) 6</label>
+        <label><input type="radio" name="q2" value="B"> B) 9</label>
+        <label><input type="radio" name="q2" value="C"> C) 12</label>
+    </div>
+    
+    <button id="show-answers-button">Show Answers</button>
+
+    <div id="answers-container" style="display: none;">
+        <!-- Answers will be displayed here -->
+    </div>
+
+    <script>
+        // Define an object to store user answers
+        const userAnswers = {};
+
+        // Function to display selected answers
+        function showAnswers() {
+            const answersContainer = document.getElementById('answers-container');
+            answersContainer.innerHTML = '<h2>Your Selected Answers:</h2>';
+
+            // Loop through the questions and gather user selections
+            const questions = document.querySelectorAll('[name^="q"]');
+            questions.forEach((question, index) => {
+                const selectedAnswer = document.querySelector(`[name="${question.name}"]:checked`);
+                if (selectedAnswer) {
+                    userAnswers[`Question ${index + 1}`] = selectedAnswer.value;
+                }
+            });
+
+            // Display user selections
+            for (const question in userAnswers) {
+                answersContainer.innerHTML += `<p>${question}: ${userAnswers[question]}</p>`;
+            }
+
+            // Show the answers container
+            answersContainer.style.display = 'block';
+        }
+
+        // Add an event listener to the "Show Answers" button
+        const showAnswersButton = document.getElementById('show-answers-button');
+        showAnswersButton.addEventListener('click', showAnswers);
+    </script>
+</body>
+</html>

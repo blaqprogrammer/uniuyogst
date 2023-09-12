@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UNIUYO GST EXAMS</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="timer">
+      <span id="minutes">0</span>:<span id="seconds">10</span>
+    </div>
+    <div class="question">
+      <h1 id="questionText">Question 1</h1>
+      <div class="options" id="options">
+        <label><input type="radio" name="answer" value="A"> Option A</label><br>
+        <label><input type="radio" name="answer" value="B"> Option B</label><br>
+        <label><input type="radio" name="answer" value="C"> Option C</label><br>
+        <label><input type="radio" name="answer" value="D"> Option D</label><br>
+      </div>
+      <div id="alertText" style="font-size: 35px; font-weight: bolder;">
+        <!-- alert text shows here -->
+      </div>
+      <div id="answers-container" style="display: none;">
+        <!-- Answers will be displayed here -->
+    </div>
+      <button id="nextButton">Next</button>
+      <button id="backButton">Back</button>
+      <div class="bots">
+      <button id="restartButton">Restart</button>
+      <button id="displayAnswerButton">Show Answers</button>
+    </div>
+    </div>
+  </div>
+  <!-- <footer>built by blaqcodes &copy 2023</footer>
+  -->
+
+  <script src="script.js"></script>
+  
+</body>
+
+</html>

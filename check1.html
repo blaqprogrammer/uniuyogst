@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CBT Web App</title>
+</head>
+<body>
+    <h1>Cognitive Behavioral Therapy Web App</h1>
+    
+    <div id="questions">
+        <div class="question" data-question="1">
+            <p>Question 1: How are you feeling today?</p>
+            <label><input type="radio" name="q1" value="good">Good</label>
+            <label><input type="radio" name="q1" value="neutral">Neutral</label>
+            <label><input type="radio" name="q1" value="bad">Bad</label>
+        </div>
+        <div class="question" data-question="2">
+            <p>Question 2: What triggered your feelings?</p>
+            <input type="text" name="q2">
+        </div>
+        <!-- Add more questions here -->
+    </div>
+    
+    <button id="prevBtn">Previous</button>
+    <button id="nextBtn">Next</button>
+    
+    <script>
+        const questions = document.querySelectorAll('.question');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        let currentQuestionIndex = 0;
+        const answers = {}; // Store user answers
+        
+        // Load the current question and its answer if available
+        function loadQuestion(index) {
+            questions.forEach(question => {
+                question.style.display = 'none';
+            });
+            questions[index].style.display = 'block';
+            
+            const questionNumber = questions[index].getAttribute('data-question');
+            // const savedAnswer = answers[questionNumber];
+            if (savedAnswer) {
+                const inputElements = questions[index].querySelectorAll('input');
+                inputElements.forEach(input => {
+                    if (input.value === savedAnswer) {
+                        input.checked = true;
+                    }
+                });
+                
+                const textInput = questions[index].querySelector('input[type="text"]');
+                if (textInput) {
+                    textInput.value = savedAnswer;
+                }
+            }
+            
+            currentQuestionIndex = index;
+        }
+        
+        // Event listener for the Previous button
+        prevBtn.addEventListener('click', () => {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                loadQuestion(currentQuestionIndex);
+            }
+        });
+        
+        // Event listener for the Next button
+        nextBtn.addEventListener('click', () => {
+            const selectedInput = questions[currentQuestionIndex].querySelector('input:checked');
+            const textInput = questions[currentQuestionIndex].querySelector('input[type="text"]');
+            if (selectedInput) {
+                const questionNumber = questions[currentQuestionIndex].getAttribute('data-question');
+                answers[questionNumber] = selectedInput.value;
+            }
+            if (textInput) {
+                const questionNumber = questions[currentQuestionIndex].getAttribute('data-question');
+                answers[questionNumber] = textInput.value;
+            }
+            
+            if (currentQuestionIndex < questions.length - 1) {
+                currentQuestionIndex++;
+                loadQuestion(currentQuestionIndex);
+            }
+        });
+        
+        // Load the initial question
+        loadQuestion(currentQuestionIndex);
+    </script>
+</body>
+</html>

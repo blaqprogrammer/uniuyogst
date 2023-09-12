@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Computer-Based Test</title>
+</head>
+<body>
+  <form id="testForm">
+    <div class="question">
+      <p>Question 1: What is 2 + 2?</p>
+      <label><input type="radio" name="q1" value="a"> A) 3</label>
+      <label><input type="radio" name="q1" value="b"> B) 4</label>
+      <label><input type="radio" name="q1" value="c"> C) 5</label>
+    </div>
+    <div class="question">
+      <p>Question 2: Which planet is known as the Red Planet?</p>
+      <label><input type="radio" name="q2" value="a"> A) Venus</label>
+      <label><input type="radio" name="q2" value="b"> B) Mars</label>
+      <label><input type="radio" name="q2" value="c"> C) Jupiter</label>
+    </div>
+    <div class="question">
+      <p>Question 3: What is the capital of France?</p>
+      <label><input type="radio" name="q3" value="a"> A) London</label>
+      <label><input type="radio" name="q3" value="b"> B) Paris</label>
+      <label><input type="radio" name="q3" value="c"> C) Rome</label>
+    </div>
+    
+    <button id="backButton" type="button">Back</button>
+    <button id="nextButton" type="button">Next</button>
+  </form>
+
+  <script>
+    const questions = document.querySelectorAll('.question');
+    const backButton = document.getElementById('backButton');
+    const nextButton = document.getElementById('nextButton');
+    let currentQuestionIndex = 0;
+
+    function showQuestion(index) {
+      questions.forEach((question, i) => {
+        if (i === index) {
+          question.style.display = 'block';
+        } else {
+          question.style.display = 'none';
+        }
+      });
+    }
+
+    function goToPreviousQuestion() {
+      if (currentQuestionIndex > 0) {
+        currentQuestionIndex--;
+        showQuestion(currentQuestionIndex);
+      }
+    }
+
+    function goToNextQuestion() {
+      if (currentQuestionIndex < questions.length - 1) {
+        currentQuestionIndex++;
+        showQuestion(currentQuestionIndex);
+      }
+    }
+
+    backButton.addEventListener('click', goToPreviousQuestion);
+    nextButton.addEventListener('click', goToNextQuestion);
+
+    // Show the initial question
+    showQuestion(currentQuestionIndex);
+  </script>
+</body>
+</html>
