@@ -72,7 +72,9 @@ function displayQuestion(index) {
 
   question.options.forEach((option, idx) => {
     const input = document.createElement("input");
-    input.type = "radio";
+    input.type = "checkbox";
+    input.style.width = "20px"; // Set the width to 30 pixels
+    input.style.height = "20px"; // Set the height to 30 pixels
     input.name = "answer";
     input.value = option;
     options.appendChild(input);
