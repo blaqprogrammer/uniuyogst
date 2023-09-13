@@ -312,3 +312,17 @@ function hidePassword() {
         usernameDisplay.textContent = 'No username provided.';
     }
     
+    //log out
+    // Logout function
+    function logout() {
+      // You can add code here to clear the user's session or perform other logout actions.
+      
+      // For this example, we'll simulate a logout by redirecting to the login page.
+      window.location.href = 'index.html';
+  }
+
+  // Add a click event listener to the logout button
+  const logoutButton = document.getElementById('logout');
+  if (logoutButton) {
+      logoutButton.addEventListener('click', logout);
+  }
