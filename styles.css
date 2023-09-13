@@ -71,7 +71,7 @@ body {
 
   #restartButton, #displayAnswerButton {
     /* display: block; */
-    margin-top: 10px;
+    margin-top: 20px;
     padding: 8px 16px;
     background-color: #3e8e41;
     color: #fff;
@@ -95,6 +95,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 30px;
   }
 
   /* footer {
