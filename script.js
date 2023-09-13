@@ -109,7 +109,7 @@ function startTimer() {
       displayAnswerButton.style.display = "block"; // show the "answers" button
       minutesDisplay.style.display = "none";
       secondsDisplay.style.display = "none";
-    }
+    } 
     
     else {
       timeRemaining--;
@@ -229,7 +229,7 @@ nextButton.textContent = "Next";
 function displayScore() {
     const totalQuestions = questions.length;
     const scorePercentage = (score / totalQuestions) * 100;
-    const resultText = `You scored ${score} out of ${totalQuestions} (${scorePercentage.toFixed(2)}%).`;
+    const resultText = `${username}, You scored ${score} out of ${totalQuestions} (${scorePercentage.toFixed(2)}%).`;
     
     questionText.textContent = resultText;
     questionText.style.color = "green";
@@ -240,12 +240,12 @@ function displayScore() {
 displayQuestion(currentQuestionIndex);
 startTimer();
 
-const image = document.querySelector("img"),
-input = document.querySelector("input");
+// const image = document.querySelector("img"),
+// input = document.querySelector("input");
 
-input = addEventListener("change", () => {
-  image.src = URL.createObjectURL(input.files[0]);
-});
+// input = addEventListener("change", () => {
+//   image.src = URL.createObjectURL(input.files[0]);
+// });
 
 //LOG IN AND SIGN UP FUNCTION
 
@@ -290,5 +290,25 @@ function hidePassword() {
       document.getElementById("logIn").style.display = "none";
       document.getElementById("signIn").style.display = "block";
       }
+
+      //image upload script
+
   
-     
+  
+      // Function to get URL parameter by name
+      function getParameterByName(name) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(name);
+    }
+
+    // Get the username from the URL
+    const username = getParameterByName('username');
+
+    // Display the username on the home page
+    const usernameDisplay = document.getElementById('username-display');
+    if (username) {
+        usernameDisplay.textContent = `Welcome, ${username}!`;
+    } else {
+        usernameDisplay.textContent = 'No username provided.';
+    }
+    

@@ -93,9 +93,9 @@ input[type="submit"]:hover {
 
 
 /* Hide the original file input */
-input[type="file"] {
+/* input[type="file"] {
 	display: none;
-  }
+  } */
   
   /* Style the custom label as a button */
   .custom-file-upload {
