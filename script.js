@@ -239,3 +239,56 @@ function displayScore() {
 
 displayQuestion(currentQuestionIndex);
 startTimer();
+
+const image = document.querySelector("img"),
+input = document.querySelector("input");
+
+input = addEventListener("change", () => {
+  image.src = URL.createObjectURL(input.files[0]);
+});
+
+//LOG IN AND SIGN UP FUNCTION
+
+/**function for hide password */
+
+function hidePassword() {
+  var x = document.getElementById("password");
+  if (x.type === "password") {
+  x.type = "text";
+  } else {
+  x.type = "password";
+  }
+  }
+  
+  /**Function for validate password */
+  
+  function validate_password() {
+  
+  var pass = document.getElementById('pass').value;
+  var confirm_pass = document.getElementById('confirm_pass').value;
+  if (pass != confirm_pass) {
+   document.getElementById('wrong_pass_alert').style.color = 'red';
+   document.getElementById('wrong_pass_alert').innerHTML
+       = '☒ Use same password';
+   document.getElementById('create').disabled = true;
+   document.getElementById('create').style.opacity = (0.4);
+  } else {
+   document.getElementById('wrong_pass_alert').style.color = 'green';
+   document.getElementById('wrong_pass_alert').innerHTML =
+       '🗹 Password Matched';
+   document.getElementById('create').disabled = false;
+   document.getElementById('create').style.opacity = (1);
+  }
+  }
+  
+  /**Function for toggling between Login and Sign up */
+  function clickLogIn() {
+  document.getElementById("logIn").style.display = "block";
+  document.getElementById("signIn").style.display = "none";
+  }
+  function clickSignIn() {
+      document.getElementById("logIn").style.display = "none";
+      document.getElementById("signIn").style.display = "block";
+      }
+  
+     

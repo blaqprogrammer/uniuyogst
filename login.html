@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css" type="text/css">
+    <title>UNIUYO GST LOG-IN/SIGN-UP</title>
+      
+
+</head>
+<body>
+  <!-- This is the login form-->
+    <div class="login-body" id="logIn">  
+    <div class="login-box">
+        <h1 class="tradex">Uniuyo GST Tutorial</h1>
+		<button type="button" class="bots" onclick="clickLogIn()">Login</button><button type="button" class="bots" onclick="clickSignIn()" >Sign In</button>
+		<form action="home.html" method="GET">
+
+			<input type="text" id="username" name="username" placeholder="Enter Username">
+
+			<input type="password" id="password" name="password" placeholder="Enter Password">
+            
+            <!-- An element to toggle between password visibility -->
+            <input type="checkbox" onclick="hidePassword()">Show Password
+			      <input type="submit" value="Login" onclick="nameWelcome()" >
+            <a href="forgotpass">Forgot Password</a>
+		</form>
+	</div>
+</div>
+<!--Login form ends here-->
+
+  <!-- This is the Sign-in form-->
+  <div class="login-body" id="signIn">  
+    <div class="login-box">
+        <h1 class="tradex">Uniuyo GST Tutorial</h1>
+		<button type="button" class="bots" onclick="clickLogIn()">Login</button><button type="button" class="bots" onclick="clickSignIn">Sign In</button>
+		<form action="login.php" method="POST">
+
+			<input type="text" id="username" name="username" placeholder="Username" required>
+      <input type="email" id="email" name="email" placeholder="Email" required>
+    <input type="file" id="file" name="file">
+    <label for="file" class="custom-file-upload">Add a Profile Photo</label>
+			<input type="password" id="pass" name="password" placeholder="Password" onkeyup="validate_password()" required>
+      <input type="password" id="confirm_pass" name="confirm_password" placeholder="Confirm Password" onkeyup="validate_password()" required>
+      <p id="wrong_pass_alert"></p> 
+			      <input type="submit" id="create" value="Sign-in">
+		</form>
+	</div>
+</div>
+<!--Sign-in form ends here-->
+
+<footer>blaqcodes &copy 2023</footer>
+<script src="script.js"></script>
+</body>
+</html>
