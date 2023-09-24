@@ -60,7 +60,7 @@ body {
     cursor: pointer;
   }
 
-  #logout {
+  #logout, .botts, #startButton, #goBack {
     padding: 8px;
     background-color: #3e8e41;
     color: #fff;
@@ -68,6 +68,13 @@ body {
     border-radius: 4px;
     cursor: pointer;
   }
+
+  #startButton {
+    padding: 20px;
+    width: 40%;
+  }
+
+
 
   #restartButton, #displayAnswerButton {
     /* display: block; */
@@ -98,6 +105,8 @@ body {
     margin-bottom: 30px;
   }
 
+
+
   /* footer {
     text-align: center;
     font-weight: bolder;
@@ -117,4 +126,35 @@ body {
     height: 300px;
     background-color: red;
   } */
+
+  #bottom{
+    display: none;
+    width: 100vw;
+  }
+
+  header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .headText > p {
+    text-align: center;
+    font-weight: bolder;
+  }
+
+  #top {
+    width: 85vw;
+  }
+
+  .subjectBots > button{
+    margin: 5px;
+  }
+
+  .subjectBots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
   

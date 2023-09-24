@@ -4,6 +4,14 @@ const options = document.getElementById("options");
 const nextButton = document.getElementById("nextButton");
 const restartButton = document.getElementById("restartButton");
 const backButton = document.getElementById("backButton");
+const startButton = document.getElementById("startButton");
+const gstOneButton = document.getElementById("gstOneButton");
+const gstTwoButton = document.getElementById("gstTwoButton");
+const gstThreeButton = document.getElementById("gstThreeButton");
+const gstFourButton = document.getElementById("gstFourButton");
+const gstFiveButton = document.getElementById("gstFiveButton");
+const gstSixButton = document.getElementById("gstSixButton");
+const gstSevenButton = document.getElementById("gstSevenButton");
 const minutesDisplay = document.getElementById("minutes");
 const secondsDisplay = document.getElementById("seconds");
 const alertText = document.getElementById("alertText");
@@ -82,7 +90,6 @@ function displayQuestion(index) {
     options.appendChild(document.createElement("br"));
   });
 }
-
 
 
 function startTimer() {
@@ -237,8 +244,116 @@ function displayScore() {
     nextButton.style.display = "none"; // Hide the "Next" button
   }
 
-displayQuestion(currentQuestionIndex);
-startTimer();
+  startButton.addEventListener("click", () => {
+    displayQuestion(currentQuestionIndex);
+    startTimer();
+    startButton.style.display = "none";
+    nextButton.style.display = "inline"; // Hide the "Next" button
+    backButton.style.display = "inline"; // Hide the "Back" button
+      
+  });
+
+  gstOneButton.addEventListener("click", () => {
+    const topPart = document.getElementById("top");
+    const bottomPart = document.getElementById("bottom");
+    topPart.style.display = "none";
+    bottomPart.style.display = "block";
+    nextButton.style.display = "none";
+    backButton.style.display = "none";
+    questionText.textContent = "";
+      options.innerHTML = ""; // Clear the options
+      minutesDisplay.style.display = "none";
+      secondsDisplay.style.display = "none";
+  
+    
+  });
+
+  gstTwoButton.addEventListener("click", () => {
+    const topPart = document.getElementById("top");
+    const bottomPart = document.getElementById("bottom");
+    topPart.style.display = "none";
+    bottomPart.style.display = "block";
+    nextButton.style.display = "none";
+    backButton.style.display = "none";
+    questionText.textContent = "";
+      options.innerHTML = ""; // Clear the options
+  
+    
+  });
+
+  gstThreeButton.addEventListener("click", () => {
+    const topPart = document.getElementById("top");
+    const bottomPart = document.getElementById("bottom");
+    topPart.style.display = "none";
+    bottomPart.style.display = "block";
+    nextButton.style.display = "none";
+    backButton.style.display = "none";
+    questionText.textContent = "";
+      options.innerHTML = ""; // Clear the options
+  
+    
+  });
+
+  gstFourButton.addEventListener("click", () => {
+    const topPart = document.getElementById("top");
+    const bottomPart = document.getElementById("bottom");
+    topPart.style.display = "none";
+    bottomPart.style.display = "block";
+    nextButton.style.display = "none";
+    backButton.style.display = "none";
+    questionText.textContent = "";
+      options.innerHTML = ""; // Clear the options
+  
+    
+  });
+
+  gstFiveButton.addEventListener("click", () => {
+    const topPart = document.getElementById("top");
+    const bottomPart = document.getElementById("bottom");
+    topPart.style.display = "none";
+    bottomPart.style.display = "block";
+    nextButton.style.display = "none";
+    backButton.style.display = "none";
+    questionText.textContent = "";
+      options.innerHTML = ""; // Clear the options
+  
+    
+  });
+
+  gstSixButton.addEventListener("click", () => {
+    const topPart = document.getElementById("top");
+    const bottomPart = document.getElementById("bottom");
+    topPart.style.display = "none";
+    bottomPart.style.display = "block";
+    nextButton.style.display = "none";
+    backButton.style.display = "none";
+    questionText.textContent = "";
+      options.innerHTML = ""; // Clear the options
+  
+    
+  });
+
+  gstSevenButton.addEventListener("click", () => {
+    const topPart = document.getElementById("top");
+    const bottomPart = document.getElementById("bottom");
+    topPart.style.display = "none";
+    bottomPart.style.display = "block";
+    nextButton.style.display = "none";
+    backButton.style.display = "none";
+    questionText.textContent = "";
+      options.innerHTML = ""; // Clear the options
+  
+    
+  });
+
+  goBack.addEventListener("click", () => {
+    const topPart = document.getElementById("top");
+    const bottomPart = document.getElementById("bottom");
+    topPart.style.display = "block";
+    bottomPart.style.display = "none";
+
+  });
+
 
 // const image = document.querySelector("img"),
 // input = document.querySelector("input");
@@ -311,6 +426,8 @@ function hidePassword() {
     } else {
         usernameDisplay.textContent = 'No username provided.';
     }
+
+    
     
     //log out
     // Logout function
@@ -326,3 +443,4 @@ function hidePassword() {
   if (logoutButton) {
       logoutButton.addEventListener('click', logout);
   }
+  
