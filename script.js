@@ -250,6 +250,8 @@ function displayScore() {
     startButton.style.display = "none";
     nextButton.style.display = "inline"; // Hide the "Next" button
     backButton.style.display = "inline"; // Hide the "Back" button
+    minutesDisplay.style.display = "inline";
+      secondsDisplay.style.display = "inline";
       
   });
 
@@ -277,6 +279,8 @@ function displayScore() {
     backButton.style.display = "none";
     questionText.textContent = "";
       options.innerHTML = ""; // Clear the options
+      minutesDisplay.style.display = "none";
+      secondsDisplay.style.display = "none";
   
     
   });
@@ -290,6 +294,8 @@ function displayScore() {
     backButton.style.display = "none";
     questionText.textContent = "";
       options.innerHTML = ""; // Clear the options
+      minutesDisplay.style.display = "none";
+      secondsDisplay.style.display = "none";
   
     
   });
@@ -303,6 +309,8 @@ function displayScore() {
     backButton.style.display = "none";
     questionText.textContent = "";
       options.innerHTML = ""; // Clear the options
+      minutesDisplay.style.display = "none";
+      secondsDisplay.style.display = "none";
   
     
   });
@@ -316,6 +324,8 @@ function displayScore() {
     backButton.style.display = "none";
     questionText.textContent = "";
       options.innerHTML = ""; // Clear the options
+      minutesDisplay.style.display = "none";
+      secondsDisplay.style.display = "none";
   
     
   });
@@ -329,6 +339,8 @@ function displayScore() {
     backButton.style.display = "none";
     questionText.textContent = "";
       options.innerHTML = ""; // Clear the options
+      minutesDisplay.style.display = "none";
+      secondsDisplay.style.display = "none";
   
     
   });
@@ -342,6 +354,8 @@ function displayScore() {
     backButton.style.display = "none";
     questionText.textContent = "";
       options.innerHTML = ""; // Clear the options
+      minutesDisplay.style.display = "none";
+      secondsDisplay.style.display = "none";
   
     
   });

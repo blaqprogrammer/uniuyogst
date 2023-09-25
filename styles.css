@@ -136,11 +136,16 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 100px;
   }
 
   .headText > p {
     text-align: center;
     font-weight: bolder;
+  }
+
+  .headText {
+    margin-bottom: 20px;
   }
 
   #top {
