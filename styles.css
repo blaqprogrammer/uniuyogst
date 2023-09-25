@@ -60,7 +60,7 @@ body {
     cursor: pointer;
   }
 
-  #logout, .botts, #startButton, #goBack {
+  #logout, .botts, #goBack {
     padding: 8px;
     background-color: #3e8e41;
     color: #fff;
@@ -70,8 +70,18 @@ body {
   }
 
   #startButton {
-    padding: 20px;
-    width: 40%;
+
+    
+    font-size: 30px;
+    font-weight: bolder;
+    padding: 15px;
+    background-color: #3e8e41;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  
+
   }
 
 
