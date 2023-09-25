@@ -93,7 +93,7 @@ body {
     display: flex;
   }
 
-  #username-display{
+  #username-display, #loggedInUsername{
     font-weight: bolder;
     font-size: larger;
   }

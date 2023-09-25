@@ -437,9 +437,14 @@ function hidePassword() {
     const usernameDisplay = document.getElementById('username-display');
     if (username) {
         usernameDisplay.textContent = `Welcome, ${username}!`;
+
+        loggedInUsername.textContent = `Welcome, ${username}!`;
+
     } else {
         usernameDisplay.textContent = 'No username provided.';
     }
+
+    
 
     
     
