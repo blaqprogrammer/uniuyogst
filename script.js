@@ -47,6 +47,8 @@ const questions = [
 ];
 
 
+
+
 // Shuffle function to randomize the array
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -55,32 +57,23 @@ function shuffleArray(array) {
     }
 }
 
+
 // Shuffle the questions array
 shuffleArray(questions);
 
-// Define the number of questions to display (e.g., 3)
-const numberOfQuestionsToDisplay = 2;
 
-// Select a subset of questions
-const selectedQuestions = questions.slice(0, numberOfQuestionsToDisplay);
 
-// Now, you can use selectedQuestions to display questions to users
-selectedQuestions.forEach((question, index) => {
-    console.log(`Question ${index + 1}: ${question.question}`);
-    console.log(`Options: ${question.options.join(", ")}`);
-    // Display the question to the user, and handle user responses.
-});
 
 
 
 function displayQuestion(index) {
   const question = questions[index];
-  questionText.textContent = question.question;
+  questionText.textContent = `Question ${index + 1}: ${question.question}`;
   options.innerHTML = "";
 
   question.options.forEach((option, idx) => {
     const input = document.createElement("input");
-    input.type = "checkbox";
+    input.type = "radio";
     input.style.width = "20px"; // Set the width to 30 pixels
     input.style.height = "20px"; // Set the height to 30 pixels
     input.name = "answer";
@@ -252,6 +245,9 @@ function displayScore() {
     backButton.style.display = "inline"; // Hide the "Back" button
     minutesDisplay.style.display = "inline";
       secondsDisplay.style.display = "inline";
+      // Call the function to assign question numbers
+
+
       
   });
 
@@ -360,12 +356,34 @@ function displayScore() {
     
   });
 
-  goBack.addEventListener("click", () => {
+ function getBack() {
+    const timerInterval = setInterval(() => {
+      if (timeRemaining <= 0)  {
+        clearInterval(timerInterval);
+        window.location.href = 'home.html';
+        
+  
+      } else if (( timeRemaining >= 1) || (currentQuestionIndex ===  questions.length)) {
+        clearInterval(timerInterval);
+        timeRemaining = 0;
+        backButton.style.display = "none"; // Hide the "Back" button
+        restartButton.style.display = "none"; // Show the "restart" button
+        displayAnswerButton.style.display = "none"; // show the "answers" button
+        minutesDisplay.style.display = "none";
+        secondsDisplay.style.display = "none";
+        window.location.href = 'home.html';
+      } 
+      
+    },);
+  }
+
+
+  goBack.addEventListener("click", () => { 
     const topPart = document.getElementById("top");
     const bottomPart = document.getElementById("bottom");
     topPart.style.display = "block";
     bottomPart.style.display = "none";
-
+    getBack();
   });
 
 
