@@ -235,9 +235,9 @@ nextButton.addEventListener("click", () => {
   currentQuestionIndex++;
 
   if (currentQuestionIndex ===  4 % questions.length -1) {
-        nextButton.textContent = "FINISH";
+        nextButton.textContent = "THIS IS YOUR LAST QUESTION";
   } else {
-    nextButton.textContent = "Next";
+    nextButton.textContent = "GO TO NEXT QUESTION";
   }
 
   if (currentQuestionIndex < questions.length) {
@@ -251,9 +251,9 @@ backButton.addEventListener("click", () => {
   
 
   if (currentQuestionIndex ===  questions.length -1) {
-    nextButton.textContent = "FINISH";
+    nextButton.textContent = "THIS IS YOUR LAST QUESTION";
 } else {
-nextButton.textContent = "Next";
+nextButton.textContent = "GO TO NEXT QUESTION";
 }
 
 });
