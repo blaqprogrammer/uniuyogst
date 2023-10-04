@@ -67,9 +67,14 @@ shuffleArray(questions);
 
 
 function displayQuestion(index) {
+
+      
+    
+  
   const question = questions[index];
   questionText.textContent = `Question ${index + 1}: ${question.question}`;
   options.innerHTML = "";
+
 
   question.options.forEach((option, idx) => {
     const input = document.createElement("input");
@@ -83,6 +88,7 @@ function displayQuestion(index) {
     options.appendChild(document.createElement("br"));
   });
 }
+
 
 
 function startTimer() {
@@ -109,7 +115,16 @@ function startTimer() {
       displayAnswerButton.style.display = "block"; // show the "answers" button
       minutesDisplay.style.display = "none";
       secondsDisplay.style.display = "none";
-    } 
+    } else if (currentQuestionIndex ===  3 && timeRemaining >= 0) {
+      clearInterval(timerInterval);
+      timeRemaining = 0;
+      displayScore();
+      backButton.style.display = "none"; // Hide the "Back" button
+      restartButton.style.display = "block"; // Show the "restart" button
+      displayAnswerButton.style.display = "block"; // show the "answers" button
+      minutesDisplay.style.display = "none";
+      secondsDisplay.style.display = "none";
+    }
     
     else {
       timeRemaining--;
