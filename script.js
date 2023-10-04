@@ -1,3 +1,4 @@
+const questionNumber = document.getElementById("questionNumber");
 const questionText = document.getElementById("questionText");
 const answerText = document.getElementById("answerText");
 const options = document.getElementById("options");
@@ -44,6 +45,31 @@ const questions = [
     options: ["boy", "girl", "man", "woman"],
     answer: "woman"
   },
+  {
+    question: "What is communication",
+    options: ["boy", "girl", "man", "woman"],
+    answer: "woman"
+  },
+  {
+    question: "What is communication",
+    options: ["boy", "girl", "man", "woman"],
+    answer: "woman"
+  },
+  {
+    question: "What is communication",
+    options: ["boy", "girl", "man", "woman"],
+    answer: "woman"
+  },
+  {
+    question: "What is communication",
+    options: ["boy", "girl", "man", "woman"],
+    answer: "woman"
+  },
+  {
+    question: "What is communication",
+    options: ["boy", "girl", "man", "woman"],
+    answer: "woman"
+  },
 ];
 
 
@@ -72,15 +98,19 @@ function displayQuestion(index) {
     
   
   const question = questions[index];
-  questionText.textContent = `Question ${index + 1}: ${question.question}`;
+  questionNumber.textContent = `Question ${index + 1}`;
+  questionNumber.style.marginBottom = "0px";
+  questionNumber.style.color = "green";
+  questionText.textContent = `${question.question}`;
+  questionText.style.marginTop = "0px";
   options.innerHTML = "";
 
 
   question.options.forEach((option, idx) => {
     const input = document.createElement("input");
     input.type = "radio";
-    input.style.width = "20px"; // Set the width to 30 pixels
-    input.style.height = "20px"; // Set the height to 30 pixels
+    input.style.width = "30px"; // Set the width to 30 pixels
+    input.style.height = "30px"; // Set the height to 30 pixels
     input.name = "answer";
     input.value = option;
     options.appendChild(input);
@@ -96,6 +126,7 @@ function startTimer() {
     if (timeRemaining <= 0)  {
       clearInterval(timerInterval);
       alert("Your time is up");
+      questionNumber.textContent = "";
       questionText.textContent = "", displayScore();
       questionText.style.color = "green";
       options.innerHTML = ""; // Clear the options
@@ -115,7 +146,8 @@ function startTimer() {
       displayAnswerButton.style.display = "block"; // show the "answers" button
       minutesDisplay.style.display = "none";
       secondsDisplay.style.display = "none";
-    } else if (currentQuestionIndex ===  3 && timeRemaining >= 0) {
+      questionNumber.textContent = "";
+    } else if (currentQuestionIndex ===  4 && timeRemaining >= 0) {
       clearInterval(timerInterval);
       timeRemaining = 0;
       displayScore();
@@ -124,6 +156,7 @@ function startTimer() {
       displayAnswerButton.style.display = "block"; // show the "answers" button
       minutesDisplay.style.display = "none";
       secondsDisplay.style.display = "none";
+      questionNumber.textContent = "";
     }
     
     else {
@@ -242,7 +275,7 @@ nextButton.textContent = "Next";
 
 
 function displayScore() {
-    const totalQuestions = questions.length;
+    const totalQuestions = 4 % questions.length;
     const scorePercentage = (score / totalQuestions) * 100;
     const resultText = `${username}, You scored ${score} out of ${totalQuestions} (${scorePercentage.toFixed(2)}%).`;
     

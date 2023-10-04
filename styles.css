@@ -38,27 +38,17 @@ body {
   margin-bottom: 10px;
 }
 
-#nextButton {
+#nextButton, #backButton {
   /* display: block; */
-  margin-top: 10px;
+  margin-top: 20px;
   padding: 8px 16px;
   background-color: #3e8e41;
   color: #fff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-}
 
-#backButton{
-    /* display: block; */
-    margin-top: 10px;
-    padding: 8px 16px;
-    background-color: #3e8e41;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
+}
 
   #logout, .botts, #goBack {
     padding: 8px;
