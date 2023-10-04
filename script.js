@@ -26,44 +26,44 @@ let score = 0;
 
 const questions = [
   {
-    question: "What is 2 + 2?",
-    options: ["3", "4", "5", "6"],
-    answer: "4"
+    question: "Philosophy was first defined by?",
+    options: ["Charles Dewey", "Ivan Nelson", "Charles Dorsey", "Isaac Newton"],
+    answer: "Charles Dewey"
   },
   {
-    question: "What is communication",
-    options: ["boy", "girl", "man", "woman"],
-    answer: "woman"
+    question: "Who said 'He who does not know, does not know'",
+    options: ["Emmanuel", "Bassey", "Kaern", "Samson"],
+    answer: "Samson"
   },
   {
-    question: "What is communication and the lubrication of the synthesis",
-    options: ["boy", "girl", "man", "woman"],
-    answer: "woman"
+    question: "What does NON SEQUITOR mean",
+    options: ["Not Ahead", " not compartible", "Does not follow", "not thesame"],
+    answer: "Does not follow"
   },
   {
-    question: "What is communication",
-    options: ["boy", "girl", "man", "woman"],
-    answer: "woman"
+    question: "Philosopy has 3 branches",
+    options: ["True", "False", "4 Braches", "None of the Above"],
+    answer: "False"
   },
   {
-    question: "What is communication",
-    options: ["boy", "girl", "man", "woman"],
-    answer: "woman"
+    question: "The term Philosophy is gotten from the greek words",
+    options: ["Phelo and Sophia", "Pilo and Sophia", "Philo and Sophia", "Philo and Sophy"],
+    answer: "Philo and Sophia"
   },
   {
-    question: "What is communication",
-    options: ["boy", "girl", "man", "woman"],
-    answer: "woman"
+    question: "According to philosophy, how was the evolution of the earth?",
+    options: ["The Loud Bang Theory", "Evolved from Animals", "Chemical Mixture", "All of the Above"],
+    answer: "The Loud Bang Theory"
   },
   {
-    question: "What is communication",
-    options: ["boy", "girl", "man", "woman"],
-    answer: "woman"
+    question: "Philosophy can be defined as?",
+    options: ["Study of God", "Study of Wisdom", "Search for Wisdom", "Quest for wisdom"],
+    answer: "Search for Wisdom"
   },
   {
-    question: "What is communication",
-    options: ["boy", "girl", "man", "woman"],
-    answer: "woman"
+    question: "Philo and Sophia means?",
+    options: ["Search and Wisdom", "Study and Wisdom", "Wisdom and Knowledge", "Search for Knowledge"],
+    answer: "Search for Knowledge"
   },
   {
     question: "What is communication",
@@ -109,13 +109,14 @@ function displayQuestion(index) {
   question.options.forEach((option, idx) => {
     const input = document.createElement("input");
     input.type = "radio";
-    input.style.width = "30px"; // Set the width to 30 pixels
-    input.style.height = "30px"; // Set the height to 30 pixels
+    input.style.width = "23px"; // Set the width to 30 pixels
+    input.style.height = "23px"; // Set the height to 30 pixels
     input.name = "answer";
     input.value = option;
     options.appendChild(input);
     options.appendChild(document.createTextNode(` ${option}`));
     options.appendChild(document.createElement("br"));
+    
   });
 }
 
@@ -165,6 +166,7 @@ function startTimer() {
       const seconds = timeRemaining % 60;
       minutesDisplay.textContent = minutes < 10 ? "0" + minutes : minutes;
       secondsDisplay.textContent = seconds < 10 ? "0" + seconds : seconds;
+      backButton.style.display = "none"; // Hide the "Back" button
       
     }
   }, 1000);
@@ -187,7 +189,7 @@ function restartTimer(){
       minutesDisplay.style.display = "inline";
       secondsDisplay.style.display = "inline";
       nextButton.style.display = "inline"; // Hide the "Next" button
-      backButton.style.display = "inline"; // Hide the "Back" button
+      backButton.style.display = "none"; // Hide the "Back" button
       
     
   },);
@@ -232,7 +234,7 @@ nextButton.addEventListener("click", () => {
 
   currentQuestionIndex++;
 
-  if (currentQuestionIndex ===  questions.length -1) {
+  if (currentQuestionIndex ===  4 % questions.length -1) {
         nextButton.textContent = "FINISH";
   } else {
     nextButton.textContent = "Next";
@@ -246,10 +248,7 @@ nextButton.addEventListener("click", () => {
 });
 
 backButton.addEventListener("click", () => {
-  if (currentQuestionIndex < questions.length) {
-    currentQuestionIndex--;
-    displayQuestion(currentQuestionIndex);
-  }
+  
 
   if (currentQuestionIndex ===  questions.length -1) {
     nextButton.textContent = "FINISH";
@@ -290,7 +289,7 @@ function displayScore() {
     startTimer();
     startButton.style.display = "none";
     nextButton.style.display = "inline"; // Hide the "Next" button
-    backButton.style.display = "inline"; // Hide the "Back" button
+    backButton.style.display = "none"; // Hide the "Back" button
     minutesDisplay.style.display = "inline";
       secondsDisplay.style.display = "inline";
       // Call the function to assign question numbers
