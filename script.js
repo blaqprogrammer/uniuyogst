@@ -92,8 +92,6 @@ shuffleArray(questions);
 
 
 
-
-
 function displayQuestion(index) {
 
       
@@ -279,6 +277,7 @@ function displayScore() {
     const totalQuestions = availableQuestions % questions.length;
     const scorePercentage = (score / totalQuestions) * 100;
     const resultText = `${username}, You scored ${score} out of ${totalQuestions} (${scorePercentage.toFixed(2)}%).`;
+    
     
     questionText.textContent = resultText;
     questionText.style.color = "green";
@@ -529,4 +528,5 @@ function hidePassword() {
   if (logoutButton) {
       logoutButton.addEventListener('click', logout);
   }
-  
+
+ 
