@@ -91,6 +91,11 @@ input[type="submit"]:hover {
 	display: none;
 }
 
+.welcome {
+    text-align: center;
+    color: red;
+  }
+
 
 /* Hide the original file input */
 /* input[type="file"] {
