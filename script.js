@@ -19,8 +19,10 @@ const alertText = document.getElementById("alertText");
 // const alertTextContent = document.createTextNode("YOUR TIME IS UP");
 const userAnswer = {}; // Store user answers
 
+const availableQuestions = 6;
+
 let currentQuestionIndex = 0;
-let timeRemaining = 10; // 30 minutes in seconds
+let timeRemaining = 60; // 30 minutes in seconds
 
 let score = 0;
 
@@ -148,7 +150,7 @@ function startTimer() {
       minutesDisplay.style.display = "none";
       secondsDisplay.style.display = "none";
       questionNumber.textContent = "";
-    } else if (currentQuestionIndex ===  4 && timeRemaining >= 0) {
+    } else if (currentQuestionIndex ===  availableQuestions && timeRemaining >= 0) {
       clearInterval(timerInterval);
       timeRemaining = 0;
       displayScore();
@@ -175,7 +177,7 @@ function startTimer() {
 function restartTimer(){
   const timerInterval = setInterval(() => {
     clearInterval(timerInterval);
-    timeRemaining = 15;
+    timeRemaining = 60;
     startTimer();
     currentQuestionIndex = 0;
     shuffleArray(questions);
@@ -234,13 +236,13 @@ nextButton.addEventListener("click", () => {
 
   currentQuestionIndex++;
 
-  if (currentQuestionIndex ===  4 % questions.length -1) {
+  if (currentQuestionIndex ===  availableQuestions % questions.length -1) {
         nextButton.textContent = "THIS IS YOUR LAST QUESTION";
   } else {
     nextButton.textContent = "GO TO NEXT QUESTION";
   }
 
-  if (currentQuestionIndex < questions.length) {
+  if (currentQuestionIndex < availableQuestions % questions.length) {
     displayQuestion(currentQuestionIndex);
   } else {
     displayScore();
@@ -274,7 +276,7 @@ nextButton.textContent = "GO TO NEXT QUESTION";
 
 
 function displayScore() {
-    const totalQuestions = 4 % questions.length;
+    const totalQuestions = availableQuestions % questions.length;
     const scorePercentage = (score / totalQuestions) * 100;
     const resultText = `${username}, You scored ${score} out of ${totalQuestions} (${scorePercentage.toFixed(2)}%).`;
     
