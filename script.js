@@ -288,6 +288,10 @@ function displayScore() {
   startButton.addEventListener("click", () => {
     displayQuestion(currentQuestionIndex);
     startTimer();
+    timeRemaining = 60;
+    restartButton.style.display = "none";
+    displayAnswerButton.style.display = "none";
+    questionText.style.color = "black";
     startButton.style.display = "none";
     nextButton.style.display = "inline"; // Hide the "Next" button
     backButton.style.display = "none"; // Hide the "Back" button
@@ -310,6 +314,8 @@ function displayScore() {
       options.innerHTML = ""; // Clear the options
       minutesDisplay.style.display = "none";
       secondsDisplay.style.display = "none";
+      restartButton.style.display = "none";
+    displayAnswerButton.style.display = "none";
   
     
   });
@@ -408,7 +414,7 @@ function displayScore() {
     const timerInterval = setInterval(() => {
       
         clearInterval(timerInterval);
-        timeRemaining = 60;
+        timeRemaining = 0;
         startButton.style.display = "block";
        restartButton.style.display = "none";
        displayAnswerButton.style.display = "none";
