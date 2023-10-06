@@ -406,23 +406,22 @@ function displayScore() {
 
  function getBack() {
     const timerInterval = setInterval(() => {
-      if (timeRemaining <= 0)  {
+      
         clearInterval(timerInterval);
-        window.location.href = 'home.html';
+        timeRemaining = 60;
+        startButton.style.display = "block";
+       restartButton.style.display = "none";
+       displayAnswerButton.style.display = "none";
+       questionNumber.textContent = "";
+
+        const topPart = document.getElementById("top");
+    const bottomPart = document.getElementById("bottom");
+    topPart.style.display = "block";
+    bottomPart.style.display = "none";
         
   
-      } else if (( timeRemaining >= 1) || (currentQuestionIndex ===  questions.length)) {
-        clearInterval(timerInterval);
-        timeRemaining = 0;
-        backButton.style.display = "none"; // Hide the "Back" button
-        restartButton.style.display = "none"; // Show the "restart" button
-        displayAnswerButton.style.display = "none"; // show the "answers" button
-        minutesDisplay.style.display = "none";
-        secondsDisplay.style.display = "none";
-        window.location.href = 'home.html';
-      } 
-      
-    },);
+     
+    }, 1000);
   }
 
 
