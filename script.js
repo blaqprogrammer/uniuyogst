@@ -287,11 +287,8 @@ function displayScore() {
 
   startButton.addEventListener("click", () => {
     displayQuestion(currentQuestionIndex);
-    startTimer();
-    timeRemaining = 60;
-    restartButton.style.display = "none";
-    displayAnswerButton.style.display = "none";
-    questionText.style.color = "black";
+    restartTimer();
+    
     startButton.style.display = "none";
     nextButton.style.display = "inline"; // Hide the "Next" button
     backButton.style.display = "none"; // Hide the "Back" button
@@ -315,7 +312,7 @@ function displayScore() {
       minutesDisplay.style.display = "none";
       secondsDisplay.style.display = "none";
       restartButton.style.display = "none";
-    displayAnswerButton.style.display = "none";
+        displayAnswerButton.style.display = "none";
   
     
   });
@@ -331,7 +328,8 @@ function displayScore() {
       options.innerHTML = ""; // Clear the options
       minutesDisplay.style.display = "none";
       secondsDisplay.style.display = "none";
-  
+      restartButton.style.display = "none";
+        displayAnswerButton.style.display = "none";
     
   });
 
@@ -346,6 +344,8 @@ function displayScore() {
       options.innerHTML = ""; // Clear the options
       minutesDisplay.style.display = "none";
       secondsDisplay.style.display = "none";
+      restartButton.style.display = "none";
+        displayAnswerButton.style.display = "none";
   
     
   });
@@ -361,6 +361,8 @@ function displayScore() {
       options.innerHTML = ""; // Clear the options
       minutesDisplay.style.display = "none";
       secondsDisplay.style.display = "none";
+      restartButton.style.display = "none";
+        displayAnswerButton.style.display = "none";
   
     
   });
@@ -376,6 +378,8 @@ function displayScore() {
       options.innerHTML = ""; // Clear the options
       minutesDisplay.style.display = "none";
       secondsDisplay.style.display = "none";
+      restartButton.style.display = "none";
+        displayAnswerButton.style.display = "none";
   
     
   });
@@ -391,7 +395,8 @@ function displayScore() {
       options.innerHTML = ""; // Clear the options
       minutesDisplay.style.display = "none";
       secondsDisplay.style.display = "none";
-  
+      restartButton.style.display = "none";
+        displayAnswerButton.style.display = "none";
     
   });
 
@@ -406,36 +411,31 @@ function displayScore() {
       options.innerHTML = ""; // Clear the options
       minutesDisplay.style.display = "none";
       secondsDisplay.style.display = "none";
+      restartButton.style.display = "none";
+        displayAnswerButton.style.display = "none"; 
   
     
   });
 
  function getBack() {
     const timerInterval = setInterval(() => {
-      
         clearInterval(timerInterval);
         timeRemaining = 0;
         startButton.style.display = "block";
-       restartButton.style.display = "none";
-       displayAnswerButton.style.display = "none";
-       questionNumber.textContent = "";
-
-        const topPart = document.getElementById("top");
-    const bottomPart = document.getElementById("bottom");
-    topPart.style.display = "block";
-    bottomPart.style.display = "none";
+        restartButton.style.display = "none";
+        displayAnswerButton.style.display = "none";
         
-  
-     
-    }, 1000);
-  }
 
-
-  goBack.addEventListener("click", () => { 
     const topPart = document.getElementById("top");
     const bottomPart = document.getElementById("bottom");
     topPart.style.display = "block";
     bottomPart.style.display = "none";
+        
+    },);
+  }
+
+
+  goBack.addEventListener("click", () => { 
     getBack();
   });
 
