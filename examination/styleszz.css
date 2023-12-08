@@ -1,0 +1,163 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+}
+
+body {
+    background-image: url(https://practicelanguagesonline.files.wordpress.com/2021/08/group-people-holding-question-mark-icons_53876-64627.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgb(36, 36, 176);
+    background-blend-mode: darken;
+
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+
+}
+
+
+.wrapper {
+    width: 40%;
+    height: 50vh;
+    background-color:white;
+    border-radius: 10px;
+    box-shadow: 5px 10px 10px rgb(5, 5, 57);
+}
+
+.content {
+    text-align: center;
+    padding: 15px;
+    background-color: rgb(0, 0, 88);
+    border-radius: 10px 10px 0px 0px;
+}
+
+.detailsContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45%;
+    background-color: white;
+    
+}
+
+.detailsContentWrapper {
+    width: 70%;
+    
+}
+
+.details-row {
+    display: flex;
+    padding: 7px 0;
+}
+
+.details-row label {
+    padding-right: 10px;
+    color: black;
+    font-weight: bolder;
+}
+
+.details-row input {
+    flex: 1;
+    height: 25px;
+    background-color:skyblue;
+    border-style: none;
+    border-radius: 4px;
+    text-align: center;
+    color: black;
+    font-size: 16px;
+    font-weight: bolder;
+
+}
+
+.details-row input:focus {
+    outline: none;
+}
+
+.bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottomContent{
+    width: 80%;
+    text-align: center;
+}
+
+.bottom > button, p{
+    color: black;
+}
+
+button {
+    padding: 10px;
+    background-color: rgb(0, 0, 88);
+    width: 50%;
+    border: none;
+    font-size: 16px;
+
+}
+
+button:hover {
+    background-color: blue;
+}
+
+::placeholder {
+    color: rgb(0, 0, 88);
+    text-align: center;
+    letter-spacing: 7px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.setDiv {
+    color: black;
+    margin-bottom: 5px;
+}
+
+.setDiv > ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.setDiv > ul > li > a {
+    color: black;
+    list-style: none;
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+.setDiv > ul > li {
+    list-style: none;
+    text-decoration: none;
+}
+
+.setDiv > ul > li > a:hover {
+    color: red;
+}
+
+#sectionTwo {
+    display: none;
+}
+
+#getValue {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+
